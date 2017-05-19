@@ -63,7 +63,7 @@ function intersect_set {
 ###############################################################################
 function is_set_disjoint {
   local intersection=$(intersect_set "$1" "$2")
-  test -z "$intersection"
+  [[ -z "$intersection" ]]
 }
 
 ###############################################################################
@@ -87,5 +87,5 @@ function set_length {
 #                    1 if set contains at least one element
 ###############################################################################
 function is_set_empty {
-  test $(set_length "$1") -eq 0 
+  [[ $(set_length "$1") -eq 0 ]]
 }
